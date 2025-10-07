@@ -39,6 +39,6 @@ public class InputSwitcher : MonoBehaviour
         playerController.SetInputHandler(newInput);
 
         Debug.Log("Switched to: NEW INPUT SYSTEM");
-        if (statusText != null) statusText.text = "Active System: New (Keys: WASD, Space) | Press R to remap Jump";
+        if (statusText != null) statusText.text = "Active System: New (Keys: WASD, Space)";
     }
 }
