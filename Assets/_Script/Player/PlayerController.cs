@@ -42,4 +42,13 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            GameManager.Instance.AddScore(10);
+        }
+    }
 }
