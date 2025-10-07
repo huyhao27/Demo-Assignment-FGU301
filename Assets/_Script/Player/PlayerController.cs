@@ -4,11 +4,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 10f; 
-    public float jumpForce = 7f; 
+    public float moveSpeed = 10f;
+    public float jumpForce = 7f;
 
     private Rigidbody2D rb;
-    private IPlayerInput input; 
+    private IPlayerInput input;
 
     void Awake()
     {
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (input.JumpInputDown)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0); 
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
         }
     }
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coin"))
